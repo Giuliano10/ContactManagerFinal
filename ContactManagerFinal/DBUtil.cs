@@ -15,7 +15,7 @@ namespace ContactManagerFinal
         private string connectionString = ConfigurationManager.ConnectionStrings["MyConnectionString"].ConnectionString;
 
 
-        public List<Contact> getContactList()
+        public List<Contact> GetContactList()
         {
             List<Contact> contactList = new List<Contact>();
 
@@ -56,7 +56,7 @@ namespace ContactManagerFinal
 
         }
 
-        public Contact getContact(int IdNumber)
+        public Contact GetContact(int IdNumber)
         {
 
             Contact cslct = null;
@@ -83,16 +83,17 @@ namespace ContactManagerFinal
 
                         cslct = new Contact((int)sdr["IdNumber"], (string)sdr["FirstName"], (string)sdr["LastName"], (string)sdr["PhoneNumber"], (string)sdr["Email"]);
 
-                        }
-
                     }
 
                 }
+
+            }
             return cslct;
         }
 
 
-        public int addContact(Contact theContact) {
+        public int AddContact(Contact theContact)
+        {
 
             int newId = 0;
 
@@ -137,10 +138,80 @@ namespace ContactManagerFinal
         }
 
 
+        public void UpdateContact(Contact theContact)
+        {
+
+
+            SqlConnection conn = new SqlConnection(connectionString);
+            string queryStmt = "UPDATE Contacts set FirstName = @FirstName, LastName = @LastName, PhoneNumber = @PhoneNumber, Email = @Email where IdNumber = @IdNumber ";
+
+            SqlCommand scm = new SqlCommand(queryStmt, conn);
+
+
+            scm.Parameters.AddWithValue("@IdNumber ", theContact.IdNumber);
+            scm.Parameters.AddWithValue("@FirstName ", theContact.FirstName);
+            scm.Parameters.AddWithValue("@LastName ", theContact.LastName);
+            scm.Parameters.AddWithValue("@PhoneNumber ", theContact.PhoneNumber);
+            scm.Parameters.AddWithValue("@Email ", theContact.Email);
+
+
+            try
+            {
+                conn.Open();
+
+                var rowsAffected = scm.ExecuteNonQuery();
+                Console.WriteLine("Contact updated.");
+                Console.WriteLine();
+                //Console.WriteLine(theContact);
+
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error: " + e.ToString());
+
+            }
+            finally { conn.Close(); }
+
+        }
+
+        public void DeleteContact(Contact theContact)
+        {
+
+            SqlConnection conn = new SqlConnection(connectionString);
+
+            string queryStmt = "DELETE from Contacts where IdNumber = @IdNumber";
+
+            SqlCommand scm = new SqlCommand(queryStmt, conn);
+
+            scm.Parameters.AddWithValue("@IdNumber", theContact.IdNumber);
+
+
+            try
+            {
+                conn.Open();
+
+                var rowsAffected = scm.ExecuteNonQuery();
+                Console.WriteLine("Contact deleted.");
+
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine("Error: " + e.ToString());
+
+            }
+            finally { conn.Close(); }
+
+
+
+        }
+
 
 
 
 
 
     }
-    }
+
+
+
+}
