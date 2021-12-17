@@ -6,9 +6,60 @@
         xmlns:local="clr-namespace:ContactManagerFinal"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <DockPanel Margin="10">
+        <StackPanel DockPanel.Dock="Right" Margin="10, 0">
 
-        <Label Content="This is a test"></Label>
-        
-    </Grid>
+            <StackPanel.Resources>
+
+                <Style TargetType="Button">
+                    <Setter Property="Margin" Value="0,0,0,5"/>
+                </Style>
+
+
+            </StackPanel.Resources>
+
+            <TextBlock FontWeight="Bold" Margin="0,0,0,10">ListBox Selection</TextBlock>
+
+            <Button Name="btnShowSelectedItem" Click="btnShowSelectedItem_Click">Show Selected</Button>
+            <Button Name="btnSelectLast" Click="btnSelectLast_Click">Select Last</Button>
+            <Button Name="btnSelectNext" Click="btnSelectNext_Click">Select Next</Button>
+            <Button Name="btnSelectCSharp" Click="btnSelectCSharp_Click">Select C#</Button>
+            <Button Name="btnShowSelectAll" Click="btnShowSelectAll_Click">Select All</Button>
+            <Button x:Name="btnWindow" Click="btnWindow_Click">Example Window</Button>
+            <!--Demo button-->
+
+
+
+
+        </StackPanel>
+
+        <ListBox x:Name="LbToDoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended"  SelectionChanged="LbToDoList_SelectionChanged">
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+
+                    <Grid Margin="0,2">
+                        <Grid.ColumnDefinitions>
+
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="100"/>
+
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Text="{Binding Title}"/>
+                        <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Completion}"/>
+
+
+                    </Grid>
+
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+
+        </ListBox>
+
+    </DockPanel>
+
+
 </Window>
