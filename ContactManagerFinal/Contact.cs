@@ -8,9 +8,12 @@ namespace ContactManagerFinal
 {
     class Contact
     {
-        public Contact( int id, string firstName, string lastName, string phoneNumber, string email)
+
+        public Contact() { } //no arg
+
+        public Contact( int idNumber, string firstName, string lastName, string phoneNumber, string email) //full constructor with record unique identifier (IdNumber)
         {
-            this.Id = id;
+            this.IdNumber = idNumber;
             this.FirstName = firstName;
             this.LastName = lastName;
             this.PhoneNumber = phoneNumber;
@@ -18,7 +21,18 @@ namespace ContactManagerFinal
 
         }
 
-        public int Id { get; set; }
+        public Contact(string firstName, string lastName, string phoneNumber, string email) //constructor for new contact (id numbers are auto-incremented)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.PhoneNumber = phoneNumber;
+            this.Email = email;
+
+
+        }
+        
+        //getters & setters
+        public int IdNumber { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
