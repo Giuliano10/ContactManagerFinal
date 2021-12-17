@@ -24,18 +24,17 @@ namespace ContactManagerFinal
         {
             InitializeComponent();
 
-            List<ToDoItem> items = new List<ToDoItem>();
+            List<Contact> contacts = new List<Contact>();
 
 
-            items.Add(new ToDoItem("C# Test", 10));
-            items.Add(new ToDoItem("C# Project", 2));
-            items.Add(new ToDoItem("SQL Practice Question", 80));
-            items.Add(new ToDoItem("SQL Final", 4));
+            contacts.Add(new Contact(1, "Luigi","Migiliara","514-010-0101", "lumig@gmail.com"));
+            contacts.Add(new Contact(2, "Giuliano", "Iantomasi", "514-010-0101", "giantomasi@gmail.com"));
+            contacts.Add(new Contact(3, "Matthew", "Noce", "514-010-0101", "mnoce@gmail.com"));
 
 
-            LbToDoList.ItemsSource = items;
-            LbToDoList.SelectedIndex = 0;
-            LbToDoList.Focus();
+            LbContactManager.ItemsSource = contacts;
+            LbContactManager.SelectedIndex = 0;
+            LbContactManager.Focus();
 
 
 
@@ -70,7 +69,7 @@ namespace ContactManagerFinal
 
         }
 
-        private void LbToDoList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void LbContactManager_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
@@ -78,7 +77,7 @@ namespace ContactManagerFinal
         private void btnWindow_Click(object sender, RoutedEventArgs e)
         {
 
-            ExampleNewWIndow eWIndow = new ExampleNewWIndow("Hey Bello");
+            ExampleWindow eWIndow = new ExampleWindow("Hey Bello");
             eWIndow.Show();
 
         }

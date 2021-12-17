@@ -19,9 +19,15 @@ namespace ContactManagerFinal
     /// </summary>
     public partial class ExampleWindow : Window
     {
-        public ExampleWindow()
+        public ExampleWindow(string txt)
         {
             InitializeComponent();
+            NewWindowLabel.Content = txt;
+        }
+
+        private void NewWindowButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
         }
     }
 }

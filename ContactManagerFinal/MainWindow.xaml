@@ -18,13 +18,13 @@
 
             </StackPanel.Resources>
 
-            <TextBlock FontWeight="Bold" Margin="0,0,0,10">ListBox Selection</TextBlock>
+            <TextBlock FontWeight="Bold" Margin="0,0,0,10">Contact Manager</TextBlock>
 
-            <Button Name="btnShowSelectedItem" Click="btnShowSelectedItem_Click">Show Selected</Button>
-            <Button Name="btnSelectLast" Click="btnSelectLast_Click">Select Last</Button>
+            <Button Name="btnShowSelectedItem" Click="btnShowSelectedItem_Click">Add Contact</Button>
+            <Button Name="btnSelectLast" Click="btnSelectLast_Click">Update Contact</Button>
             <Button Name="btnSelectNext" Click="btnSelectNext_Click">Select Next</Button>
-            <Button Name="btnSelectCSharp" Click="btnSelectCSharp_Click">Select C#</Button>
-            <Button Name="btnShowSelectAll" Click="btnShowSelectAll_Click">Select All</Button>
+            <Button Name="btnSelectCSharp" Click="btnSelectCSharp_Click">Delete Contact</Button>
+            <Button Name="btnShowSelectAll" Click="btnShowSelectAll_Click">Show All</Button>
             <Button x:Name="btnWindow" Click="btnWindow_Click">Example Window</Button>
             <!--Demo button-->
 
@@ -33,7 +33,7 @@
 
         </StackPanel>
 
-        <ListBox x:Name="LbToDoList" HorizontalContentAlignment="Stretch" SelectionMode="Extended"  SelectionChanged="LbToDoList_SelectionChanged">
+        <ListBox x:Name="LbContactManager" HorizontalContentAlignment="Stretch" SelectionMode="Extended"  SelectionChanged="LbContactManager_SelectionChanged">
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -47,7 +47,8 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Text="{Binding Title}"/>
-                        <ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Completion}"/>
+                        
+                        <!--<ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Completion}"/> -->
 
 
                     </Grid>
