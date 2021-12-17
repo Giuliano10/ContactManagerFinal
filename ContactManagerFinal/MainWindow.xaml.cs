@@ -45,7 +45,7 @@ namespace ContactManagerFinal
         private void btnShowSelectedItem_Click(object sender, RoutedEventArgs e)
         {
 
-
+          
 
         }
 
@@ -66,7 +66,9 @@ namespace ContactManagerFinal
 
         private void btnShowSelectAll_Click(object sender, RoutedEventArgs e)
         {
+            DBUtil db = new DBUtil();
 
+            db.getContactList();
         }
 
         private void LbContactManager_SelectionChanged(object sender, SelectionChangedEventArgs e)
