@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:ContactManagerFinal"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        
+        
+        
+        
+        
          
     </Application.Resources>
 </Application>

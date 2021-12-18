@@ -45,7 +45,7 @@
                         </Grid.ColumnDefinitions>
 
                         <TextBlock Text="{Binding Title}"/>
-                        
+
 
                     </Grid>
 

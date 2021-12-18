@@ -8,7 +8,6 @@
         Title="ExampleWindow" Height="450" Width="800">
     <Grid Margin="0,0,-0.4,0">
 
-        <Label x:Name="NewWindowLabel" HorizontalAlignment="Left">Hello</Label>
         <Button x:Name="NewWindowButton" HorizontalAlignment="Center" Click="NewWindowButton_Click" Margin="349,197,356,174" Width="89">Close</Button>
     </Grid>
 
