@@ -41,28 +41,40 @@ namespace ContactManagerFinal
 
         private void btnAddContact_Click(object sender, RoutedEventArgs e)
         {
-
+            DBUtil db = new DBUtil();
+            //db.AddContact();
         
         }
 
         private void btnUpdateContact_Click(object sender, RoutedEventArgs e)
         {
-
+            DBUtil db = new DBUtil();
+            //db.UpdateContact();
         }
 
         private void btnGetContact_Click(object sender, RoutedEventArgs e)
         {
-            
+
+            DBUtil db = new DBUtil();
+            //db.GetContact();
+
+
         }
 
         private void btnDeleteContact_Click(object sender, RoutedEventArgs e)
         {
 
+            DBUtil db = new DBUtil();
+            //db.DeleteContact();
+
+
         }
 
         private void btnShowAll_Click(object sender, RoutedEventArgs e)
         {
-          
+
+            DBUtil db = new DBUtil();
+            //db.GetContactList();
 
         }
 

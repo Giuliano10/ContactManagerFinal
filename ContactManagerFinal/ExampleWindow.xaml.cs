@@ -22,7 +22,7 @@ namespace ContactManagerFinal
         public ExampleWindow(string txt)
         {
             InitializeComponent();
-            NewWindowLabel.Content = txt;
+            
         }
 
         private void NewWindowButton_Click(object sender, RoutedEventArgs e)

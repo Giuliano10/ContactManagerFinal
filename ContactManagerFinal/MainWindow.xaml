@@ -6,106 +6,59 @@
         xmlns:local="clr-namespace:ContactManagerFinal"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <DockPanel Margin="10">
-        <StackPanel DockPanel.Dock="Right" Margin="10, 0">
+    <Grid>
+        <ListView HorizontalAlignment="Left" Height="364" Margin="10,22,0,0" VerticalAlignment="Top" Width="169" Foreground="#FFFCFCFC">
+            <TextBlock Width="140" Height="329">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
 
-            <StackPanel.Resources>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
 
-                <Style TargetType="Button">
-                    <Setter Property="Margin" Value="0,0,0,5"/>
-                </Style>
-
-
-            </StackPanel.Resources>
-
-            <TextBlock FontWeight="Bold" Margin="0,0,0,10">Contact Manager</TextBlock>
-
-            <Button Name="btnAddContact" Click="btnAddContact_Click">Add Contact</Button>
-            <Button Name="btnUpdateContact" Click="btnUpdateContact_Click">Update Contact</Button>
-            <Button Name="btnGetContact" Click="btnGetContact_Click">Get Contact</Button>
-            <Button Name="btnDeleteContact" Click="btnDeleteContact_Click">Delete Contact</Button>
-            <Button Name="btnShowAll" Click="btnShowAll_Click">Show All</Button>
-            <Button x:Name="btnWindow" Click="btnWindow_Click">Example Window</Button>
-            <!--Demo button-->
+            </TextBlock>
 
 
-        </StackPanel>
+            <ListView.Background>
+                <ImageBrush/>
+            </ListView.Background>
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label  Height="70" HorizontalAlignment="Left" Margin="199,22,0,0" Name="label1" VerticalAlignment="Top" Width="518" FontSize="60" FontFamily="Forte" />
 
-        <ListBox x:Name="LbContactManager" HorizontalContentAlignment="Stretch" SelectionMode="Extended"  SelectionChanged="LbContactManager_SelectionChanged" Margin="0,11,0,169.5" Width="572" RenderTransformOrigin="0.5,0.5">
-            <ListBox.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="-1"/>
-                    <SkewTransform AngleX="-0.533"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="11.891"/>
-                </TransformGroup>
-            </ListBox.RenderTransform>
+        <Grid>
+            <Button Name="btnAddContact" Click="btnAddContact_Click" Content="Add Contact" Background="LightGray" HorizontalAlignment="Left" Margin="40,51,0,0" VerticalAlignment="Top" Width="99" Height="39" IsEnabled="True"></Button>
+            <Button  Name="btnShowAll" Click="btnShowAll_Click" Content="Contact List" Background="LightGray" HorizontalAlignment="Left" Margin="40,106,0,0" VerticalAlignment="Top" Width="95" Height="39" IsEnabled="True"></Button>
+            <Button Name="btnDeleteContact" Click="btnDeleteContact_Click" Content="Delete Contact" Background="LightGray" HorizontalAlignment="Left" IsEnabled="True" Margin="39,159,0,0" VerticalAlignment="Top" Width="97" Height="39"/>
+            <Button Name="btnGetContact" Click="btnGetContact_Click" Content="Get Contact" Background="LightGray" HorizontalAlignment="Left" IsEnabled="True" Margin="39,215,0,0" VerticalAlignment="Top" Width="97" Height="39"/>
+            <Button Name="btnUpdateContact" Click="btnUpdateContact_Click" Content="Update Contact" Background="LightGray" HorizontalAlignment="Left" VerticalAlignment="Top" IsEnabled="True" Margin="39,265,0,0" Width="97" Height="39"/>
 
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-
-                    <Grid Margin="0,2">
-                        <Grid.ColumnDefinitions>
-
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="100"/>
-
-                        </Grid.ColumnDefinitions>
-
-                        <TextBlock Text="{Binding Title}"/>
+            
+            <Button Content="Example Window" Background="LightGray" HorizontalAlignment="Left" IsEnabled="True" Margin="38,317,0,0" VerticalAlignment="Top" Width="98" Height="39"/>
+      
+        </Grid>
 
 
-                    </Grid>
+        <DataGrid HorizontalAlignment="Left" Height="256" Margin="199,130,0,0" VerticalAlignment="Top" Width="518" RenderTransformOrigin="0.884,0.496" BorderBrush="White" SelectionChanged="DataGrid_SelectionChanged">
+            <DataGrid.Background>
+                <ImageBrush/>
+            </DataGrid.Background>
+        </DataGrid>
 
 
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-            <ListBox Height="100" Width="100"/>
-            <ListBox Height="100" Width="100"/>
-            <ListBox Height="100" Width="100"/>
-            <ListBox Height="100" Width="100">
-                <ListBox Height="100" Width="100"/>
-            </ListBox>
-
-
-
-
-
+        <ListBox Margin="199,130,0,0" Background="LightGray" Name="listBox1" HorizontalAlignment="Left" VerticalAlignment="Top" Width="566" Height="256">
+            <ListBoxItem Content="1 Jane Doe  514-808-9713  jdoe@gmail.com" IsEnabled="True"></ListBoxItem>
+            <ListBoxItem Content="2 John Stamos  514-115-4819  jstamos@gmail.com" IsEnabled="True"></ListBoxItem>
+            <ListBoxItem Content="3 Justin Di Bello  514-701-3533  jdibello@gmail.com" IsEnabled="True"></ListBoxItem>
 
         </ListBox>
-        <TextBlock Height="136" VerticalAlignment="Top" Margin="0,242,0,0" Width="551">
-            <TextBlock.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="-1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </TextBlock.RenderTransform><InlineUIContainer>
-                <TextBlock   Height="11" Width="305" RenderTransformOrigin="0.5,0.5">
-                    <TextBlock.RenderTransform>
-                        <TransformGroup>
-                            <ScaleTransform ScaleX="-1"/>
-                            <SkewTransform/>
-                            <RotateTransform/>
-                            <TranslateTransform/>
-                        </TransformGroup>
-                    </TextBlock.RenderTransform>
-                </TextBlock>
-            </InlineUIContainer></TextBlock>
-        <Label Content="Label" Height="402" VerticalAlignment="Top" Width="78" RenderTransformOrigin="0.5,0.5">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleX="-1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
+        <Label Content="Contact Manager " FontWeight="Bold" FontSize="35" HorizontalAlignment="Left" Margin="348,22,0,0" VerticalAlignment="Top"/>
 
 
-    </DockPanel>
 
-
+    </Grid>
 </Window>
