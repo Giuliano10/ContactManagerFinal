@@ -45,10 +45,9 @@ namespace ContactManagerFinal
         private void btnAddContact_Click(object sender, RoutedEventArgs e)
         {
 
-        //AddContactWindow aWindow = new AddContactWindow();
-            
-        //    aWindow.Show();
 
+
+        
         }
 
         private void btnUpdateContact_Click(object sender, RoutedEventArgs e)
@@ -58,7 +57,7 @@ namespace ContactManagerFinal
 
         private void btnGetContact_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void btnDeleteContact_Click(object sender, RoutedEventArgs e)
@@ -68,8 +67,7 @@ namespace ContactManagerFinal
 
         private void btnShowAll_Click(object sender, RoutedEventArgs e)
         {
-            //DBUtil db = new DBUtil();
-            //db.GetContactList();
+          
 
         }
 
