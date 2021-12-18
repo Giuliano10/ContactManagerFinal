@@ -24,17 +24,17 @@ namespace ContactManagerFinal
         {
             InitializeComponent();
 
-            List<Contact> contacts = new List<Contact>();
+            //List<Contact> contacts = new List<Contact>();
 
 
-            contacts.Add(new Contact(1, "Luigi","Migiliara","514-010-0101", "lumig@gmail.com"));
-            contacts.Add(new Contact(2, "Giuliano", "Iantomasi", "514-010-0101", "giantomasi@gmail.com"));
-            contacts.Add(new Contact(3, "Matthew", "Noce", "514-010-0101", "mnoce@gmail.com"));
+            //contacts.Add(new Contact(1, "Luigi", "Migiliara", "514-010-0101", "lumig@gmail.com"));
+            //contacts.Add(new Contact(2, "Giuliano", "Iantomasi", "514-010-0101", "giantomasi@gmail.com"));
+            //contacts.Add(new Contact(3, "Matthew", "Noce", "514-010-0101", "mnoce@gmail.com"));
 
 
-            LbContactManager.ItemsSource = contacts;
-            LbContactManager.SelectedIndex = 0;
-            LbContactManager.Focus();
+            //LbContactManager.ItemsSource = contacts;
+            //LbContactManager.SelectedIndex = 0;
+            //LbContactManager.Focus();
 
 
 
@@ -42,37 +42,34 @@ namespace ContactManagerFinal
 
         }
 
-        private void btnShowSelectedItem_Click(object sender, RoutedEventArgs e)
+        private void btnAddContact_Click(object sender, RoutedEventArgs e)
         {
 
-          
+        AddContactWindow aWindow = new AddContactWindow();
+            
+            aWindow.Show();
 
         }
 
-        private void btnSelectLast_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void btnSelectNext_Click(object sender, RoutedEventArgs e)
+        private void btnUpdateContact_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnSelectCSharp_Click(object sender, RoutedEventArgs e)
+        private void btnGetContact_Click(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void btnShowSelectAll_Click(object sender, RoutedEventArgs e)
+        private void btnDeleteContact_Click(object sender, RoutedEventArgs e)
         {
-            DBUtil db = new DBUtil();
 
-            db.getContactList();
         }
 
-        private void LbContactManager_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void btnShowAll_Click(object sender, RoutedEventArgs e)
         {
+            //DBUtil db = new DBUtil();
+            //db.GetContactList();
 
         }
 
@@ -83,5 +80,16 @@ namespace ContactManagerFinal
             eWIndow.Show();
 
         }
+
+        private void LbContactManager_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+
+
+        }
+
+
+
+
     }
 }

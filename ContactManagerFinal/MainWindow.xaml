@@ -20,15 +20,13 @@
 
             <TextBlock FontWeight="Bold" Margin="0,0,0,10">Contact Manager</TextBlock>
 
-            <Button Name="btnShowSelectedItem" Click="btnShowSelectedItem_Click">Add Contact</Button>
-            <Button Name="btnSelectLast" Click="btnSelectLast_Click">Update Contact</Button>
-            <Button Name="btnSelectNext" Click="btnSelectNext_Click">Select Next</Button>
-            <Button Name="btnSelectCSharp" Click="btnSelectCSharp_Click">Delete Contact</Button>
-            <Button Name="btnShowSelectAll" Click="btnShowSelectAll_Click">Show All</Button>
+            <Button Name="btnAddContact" Click="btnAddContact_Click">Add Contact</Button>
+            <Button Name="btnUpdateContact" Click="btnUpdateContact_Click">Update Contact</Button>
+            <Button Name="btnGetContact" Click="btnGetContact_Click">Get Contact</Button>
+            <Button Name="btnDeleteContact" Click="btnDeleteContact_Click">Delete Contact</Button>
+            <Button Name="btnShowAll" Click="btnShowAll_Click">Show All</Button>
             <Button x:Name="btnWindow" Click="btnWindow_Click">Example Window</Button>
             <!--Demo button-->
-
-
 
 
         </StackPanel>
@@ -48,8 +46,6 @@
 
                         <TextBlock Text="{Binding Title}"/>
                         
-                        <!--<ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Completion}"/> -->
-
 
                     </Grid>
 
